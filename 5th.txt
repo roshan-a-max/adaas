@@ -1,0 +1,87 @@
+import os
+import platform
+import mysql.connector
+import pandas as pd
+mydb = mysql.connector.connect (host = "localhost",
+user = "root",
+passwd = "root",
+database = "COURSEMATCH")
+mycursor = mydb.cursor()
+def courseInsert():
+L = ()
+c_id = int(input("Enter the course id : "))
+L.append (c_id)
+Stream = input("Enter stream name: ")
+L.append(stream)
+c_name = input("Enter courses in this stream: ")
+L.append (c_name)
+course = (L)
+sql = "insert into course_details (c_id, stream, c_name) values (%s, %s, %s)"
+mysql.execute(sql, course)
+mydb.commit()
+
+def Cview():
+print(" Select the search criteria")
+print(" 1. cid")
+print(" 2. Stream")
+print (" 3. ALL")
+ch = int (input("Enter the choice: "))
+if ch==1:
+Sc = int (input("C=id: "))
+C = (S)
+sql = "Select * from course details where
+c_id = '%s'"
+mycursor.execute(sql, ())
+elif ch==2:
+S = input("Enter stream Name: ")
+n = (S)
+sql = "select * from course details where
+Stream = '%s'"
+mycurson.execute (sql, n)
+elif ch == 3:
+Sql = "select * from Course-details"
+mycursor.execute (sql)
+res = mycursor.fetchall()
+print(" The course details are as follows : ")
+print(" Course_id, stream_Name, Course-Opportunities"
+for x in res :
+print (x)
+
+def removeCourse():
+C_id = int (input("Enter the couse-id of the
+Course to be deleted : "))
+Ci = (C_id.)
+Sql = "Delete from course_details where c_id=%s"
+mycursor.execute (Sql, cⅰ)
+mydb.commit()
+def Menuset():
+print("Enter 1 : To Add Couse")
+print(" Enter 2 : To view Course")
+print(" Enter 3: To remove Course")
+try:
+user Input = int (input(" Please select an above
+option : "))
+except value Error:
+exit ("In Hey! That's not a number!")
+else:
+print("\n")
+if (userInput == 1):
+course_Insert()
+elif (userInput == 2):
+view().
+elif (userInput == 3):
+removeCourse()
+else:
+print("Enter correct choice :..")
+Menuset ()
+
+def runAgain():
+runAgain = input('\n Want to run again y/n: ")
+while (runAgain.lower() == 'y'):
+if (platform.system() == "windows"):
+print (os.system ('cls'))
+else:
+print (os.system ('clear'))
+MenuSet ()
+runAgn = input('\n Want to run again y/n :")
+runAgain ()

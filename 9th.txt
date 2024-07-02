@@ -1,0 +1,14 @@
+#!user/bin/bash
+Year = `date +%Y`
+Month = `date +%m`
+Day = 'date + %d'
+Hours = 'date + %H'
+Minute = 'date + %M'
+Second = 'date + %S'
+echo 'date' >> book.txt
+echo "Current Date is : $Day - $Month - $Year" >> book.txt
+echo "Current Time is : $Hour: $Minute : $Second" >> book.txt
+file = 'book.txt'
+while read line : do
+echo $line
+done < $file

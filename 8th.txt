@@ -1,0 +1,42 @@
+def program 5():
+   with open("/workspaces/python/test-project/merge.txt", "r") as f1:
+        data = f1.readlines()
+
+    cnt_lines = 0
+    cnt_A = 0
+    cnt_B = 0
+    cnt_C = 0
+
+   for line in data:
+        cnt_lines += 1
+        if line[0] == 'A':
+            cnt_A += 1
+        elif line[0] == 'B':
+            cnt_B += 1
+        elif line[0] == 'C':
+            cnt_C += 1
+
+    print("Total number of lines:", cnt_lines)
+    print("Total number of lines starting with A:", cnt_A)
+    print("Total number of lines starting with B:", cnt_B)
+    print("Total number of lines starting with C:", cnt_C)
+
+program5()
+9. Save the file '1.py'
+10. Create a file named 'merge.txt' using new file option and enter text.
+11. Save the file merge.txt. Copy the path of the file and paste it in the code’s open() function.
+12. In the console to run the code, type:
+def program6(): 
+    cnt=0 
+    word_search = input('Enter the word to search:') 
+    with open("/workspaces/python/merge1.txt","r") as f1: 
+        for data in f1: 
+            words=data.split() 
+            for word in words: 
+                if(word==word_search): 
+                    cnt+=1 
+    print(word_search,"found",cnt,"times from the file") 
+    return cnt 
+cnt1=program6() 
+with open("/workspaces/python/merge3.txt","w") as f2: 
+    f2.write(str(cnt1))
